@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuihaiyu</title>
+    <meta name="description" content="前端开发者 | UI设计师 | 数字创意实践者">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --accent: #ec4899;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light) 50%, rgba(248,250,252,0.2));
+            min-height: 100vh;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        nav {
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            padding: 6rem 0 2rem; /* 调整了上下间距 */
+            text-align: center;
+        }
+
+        /* 已删除 .avatar 相关样式 */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero {
+                padding-top: 4rem; /* 调整移动端顶部间距 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content container">
+            <div class="logo">YUFAN</div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <!-- 已删除头像部分 -->
+            <h1>税海玉</h1>
+            <p>激光点云的作物表型三维重建</p>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <h2>三维重建</h2>
+                <div class="project">
+                    <h3>应用场景</h3>
+                    <p>植物表型研究：精准测量植物各部分尺寸，如高度、茎粗、叶长等；对叶片形状、花器官结构等形态特征进行测量；通过构建不同时间的三维模型，监测植物生长过程中的动态变化，分析生长趋势；评估树冠、根系等复杂结构的空间分布和复杂性；对比不同植株或不同生长条件下的三维模型，研究表型变异；观察作物在遭受干旱、病虫害等胁迫时的形态变化；还能详细研究根系的深度、分布等，了解植物对水分和养分的吸收能力。</p>
+                </div>
+                <div class="project">
+                    <h3>发展趋势</h3>
+                    <p>未来，作物三维重建技术将与人工智能、物联网、大数据等技术深度融合。例如，借助人工智能算法自动分析三维模型中的海量数据，实现作物生长状况的智能诊断和精准调控；通过物联网技术实时获取环境数据并与作物三维模型关联，为作物生长提供更全面的信息支持 。</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>点云处理平台</h2>
+                <div class="skills">
+                    <span class="skill-tag">Potree</span>
+                    <span class="skill-tag">PointCloud.js</span>
+                    <span class="skill-tag">Open3D.js</span>
+                    <span class="skill-tag">CloudCompare</span>
+                    <span class="skill-tag">Point Cloud Library</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SHY. 激光点云的作物表型三维重建</p>
+    </footer>
+</body>
+</html>
